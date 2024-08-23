@@ -1,0 +1,100 @@
+/* src/App.css */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f7fc;
+  margin: 0;
+  padding: 0;
+  color: #34495e;
+}
+
+h2 {
+  color: #2980b9; /* Blue color for headings */
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.dashboard, .manage-employees, .manage-rooms, .manage-bookings, .reviews {
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.dashboard {
+  background-color: #3498db; /* Blue background for the dashboard */
+  color: white; /* White text for contrast */
+}
+
+.manage-employees, .manage-rooms, .manage-bookings, .reviews {
+  background-color: #ffffff; /* White background for other sections */
+  color: #34495e; /* Dark blue-gray text color */
+}
+
+/* Additional Styles */
+h2, h3 {
+  margin: 0 0 15px 0;
+}
+
+p {
+  margin: 0 0 15px 0;
+  line-height: 1.6;
+}
+
+/* Buttons */
+button {
+  background-color: #2980b9;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #1a69a4;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+thead {
+  background-color: #2980b9;
+  color: white;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+  background-color: #f2f2f2;
+}
+
+th {
+  font-weight: bold;
+}
+
+/* Cards */
+.card {
+  background-color: #3498db; /* Blue background */
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
