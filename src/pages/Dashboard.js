@@ -23,6 +23,7 @@ const Dashboard = () => {
         headers: {
           Authorization: `Bearer ${token}`, // Send token as Bearer token
         },
+        withCredentials: true, 
       })
       .then((response) => {
         setStats(response.data);

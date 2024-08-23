@@ -18,7 +18,8 @@ const ManageEmployees = () => {
   // Fetch employees from API
   useEffect(() => {
     axios
-      .get("https://glimmer-petal-ceder.glitch.me/api/employees/")
+      .get("https://glimmer-petal-ceder.glitch.me/api/employees/", {
+        withCredentials: true, })
       .then((response) => {
         setEmployees(response.data);
       })
@@ -47,7 +48,9 @@ const ManageEmployees = () => {
     axios
       .put(
         `https://glimmer-petal-ceder.glitch.me/api/employees/${selectedEmployee._id}`,
-        formData
+        formData , {
+          withCredentials: true, }
+  
       )
       .then((response) => {
         setEmployees(
@@ -72,7 +75,9 @@ const ManageEmployees = () => {
   // Handle employee deletion
   const handleDeleteEmployee = (id) => {
     axios
-      .delete(`https://glimmer-petal-ceder.glitch.me/api/employees/${id}`)
+      .delete(`https://glimmer-petal-ceder.glitch.me/api/employees/${id}`, {
+        withCredentials: true, }
+)
       .then(() => {
         setEmployees(employees.filter((emp) => emp._id !== id));
         setSelectedEmployee(null); // Clear selection after deletion
@@ -93,7 +98,9 @@ const ManageEmployees = () => {
   const handleAddEmployee = (e) => {
     e.preventDefault();
     axios
-      .post("https://glimmer-petal-ceder.glitch.me/api/employees/", formData)
+      .post("https://glimmer-petal-ceder.glitch.me/api/employees/", formData, {
+        withCredentials: true, }
+)
       .then((response) => {
         setEmployees([...employees, response.data]);
         setFormVisible(false); // Hide the form after adding a new employee

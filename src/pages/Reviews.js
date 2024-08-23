@@ -6,7 +6,9 @@ const Reviews = () => {
 
   useEffect(() => {
     axios
-      .get("https://glimmer-petal-ceder.glitch.me/api/reviews/")
+      .get("https://glimmer-petal-ceder.glitch.me/api/reviews/", {
+        withCredentials: true, }
+)
       .then((response) => {
         setReviews(response.data);
         

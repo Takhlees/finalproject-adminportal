@@ -24,7 +24,9 @@ const ManageRooms = () => {
 
   const fetchRooms = async () => {
     try {
-      const response = await axios.get("https://glimmer-petal-ceder.glitch.me/api/rooms/");
+      const response = await axios.get("https://glimmer-petal-ceder.glitch.me/api/rooms/", {
+        withCredentials: true, }
+);
       setRooms(response.data);
     } catch (error) {
       console.error("Error fetching rooms:", error);
@@ -40,7 +42,9 @@ const ManageRooms = () => {
 
   const handleDelete = async (roomId) => {
     try {
-      await axios.delete(`https://glimmer-petal-ceder.glitch.me/api/rooms/${roomId}`);
+      await axios.delete(`https://glimmer-petal-ceder.glitch.me/api/rooms/${roomId}`, {
+        withCredentials: true, }
+);
       fetchRooms();
     } catch (error) {
       console.error("Error deleting room:", error);
@@ -52,10 +56,14 @@ const ManageRooms = () => {
       if (selectedRoom) {
         await axios.put(
           `https://glimmer-petal-ceder.glitch.me/api/rooms/${selectedRoom._id}`,
-          roomForm
+          roomForm, {
+            withCredentials: true, }
+    
         );
       } else {
-        await axios.post("https://glimmer-petal-ceder.glitch.me/api/rooms/", roomForm);
+        await axios.post("https://glimmer-petal-ceder.glitch.me/api/rooms/", roomForm, {
+          withCredentials: true, }
+  );
       }
       fetchRooms();
       setIsEditing(false);

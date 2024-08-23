@@ -6,7 +6,8 @@ const ManageBookings = () => {
 
   useEffect(() => {
     axios
-      .get("https://glimmer-petal-ceder.glitch.me/api/bookings/")
+      .get("https://glimmer-petal-ceder.glitch.me/api/bookings/", {
+        withCredentials: true, })
       .then((response) => {
         setBookings(response.data);
       })
@@ -15,7 +16,8 @@ const ManageBookings = () => {
 
   const handleApprove = (_id) => {
     axios
-      .post(`https://glimmer-petal-ceder.glitch.me/api/bookings/approve/${_id}`)
+      .post(`https://glimmer-petal-ceder.glitch.me/api/bookings/approve/${_id}`, {
+        withCredentials: true, })
       .then(() => {
         setBookings(
           bookings.map((booking) =>
@@ -28,7 +30,8 @@ const ManageBookings = () => {
 
   const handleReject = (_id) => {
     axios
-      .post(`https://glimmer-petal-ceder.glitch.me/api/bookings/reject/${_id}`)
+      .post(`https://glimmer-petal-ceder.glitch.me/api/bookings/reject/${_id}`, {
+        withCredentials: true, })
       .then(() => {
         setBookings(
           bookings.map((booking) =>
